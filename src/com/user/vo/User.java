@@ -1,0 +1,88 @@
+package com.user.vo;
+
+import java.util.HashSet;
+import java.util.Set;
+import com.equipment.vo.Equipment;
+
+
+public class User {
+	private Integer userid;
+	private String username;
+	private String password;
+	private String name;
+	private String email;
+	private String phone;
+	private String addr;
+	private Integer state;
+	private String code;
+	// 一个用户对应多个设备
+	private Set<Equipment> equipment = new HashSet<Equipment>();
+	
+	public Integer getUserid() {
+		return userid;
+	}
+	public void setUserid(Integer userid) {
+		this.userid = userid;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+	public String getAddr() {
+		return addr;
+	}
+	public void setAddr(String addr) {
+		this.addr = addr;
+	}
+	public Integer getState() {
+		return state;
+	}
+	public void setState(Integer state) {
+		this.state = state;
+	}
+
+	
+	public String getCode() {
+		return code;
+	}
+	public void setCode(String code) {
+		this.code = code;
+	}
+	public Set<Equipment> getEquipment() {
+		return equipment;
+	}
+	public void setEquipment(Set<Equipment> equipment) {
+		this.equipment = equipment;
+	}
+	
+	
+	
+	
+	
+}

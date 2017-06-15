@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx.xsd">
+	
+	<!-- 配置连接池: -->
+	<!-- 引入外部属性文件 -->
+	<context:property-placeholder location="classpath:jdbc.properties"/>
+	<!-- 配置C3P0连接池: -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="driverClass" value="${jdbc.driver}"/>
+		<property name="jdbcUrl" value="${jdbc.url}"/>
+		<property name="user" value="${jdbc.user}"/>
+		<property name="password" value="${jdbc.password}"/>
+	</bean>
+	
+	<!-- Hibernate的相关信息 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 注入连接池 -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 配置Hibernate的其他的属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.hbm2ddl.auto">update</prop>
+			</props>
+		</property>
+		<!-- 配置Hibernate的映射文件 -->
+		<property name="mappingResources">
+			<list>
+				<value>com/user/vo/User.hbm.xml</value>
+				<value>com/equipment/vo/Equipment.hbm.xml</value>
+				<value>com/equipmenttype/vo/EquipmentType.hbm.xml</value>
+				<value>com/data/vo/Data.hbm.xml</value>
+				
+				
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 事务管理: -->
+	<!-- 事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- 开启注解事务 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+	
+	<!-- 首页访问的Action -->
+	<bean id="indexAction" class="com.index.IndexAction" scope="prototype">
+		
+	</bean>
+
+	<bean id="controllerAction" class="com.dataservice.ControllerAction" scope="prototype">
+		
+	</bean>
+	
+	<!-- 配置验证码Action -->
+	<bean id="checkImgAction" class="com.user.action.CheckImgAction" scope="prototype">
+		
+	</bean>
+	
+	<!-- 用户模块的Action -->
+	<bean id="userAction" class="com.user.action.UserAction" scope="prototype">
+		<!-- 注入Service -->
+		<property name="userService" ref="userService"/>
+		<property name="dataService" ref="dataService"/>
+	</bean>
+	
+	<!-- 设备模块的Action -->
+	<bean id="equipmentAction" class="com.equipment.action.EquipmentAction" scope="prototype">
+		<property name="equipmentService" ref="equipmentService"/>
+	</bean>
+	
+	<bean id="equipmenttypeAction" class="com.equipmenttype.action.EquipmentTypeAction" scope="prototype">
+		<property name="equipmenttypeService" ref="equipmenttypeService"/>
+	</bean>
+	
+	<bean id="dataAction" class="com.data.action.DataAction" scope="prototype">
+		<property name="dataService" ref="dataService"/>
+	</bean>
+	
+	
+	<!-- Service注入dao  ===========================-->
+	<bean id="userService" class="com.user.service.UserService">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	
+	<bean id="equipmentService" class="com.equipment.service.EquipmentService">
+		<property name="equipmentDao" ref="equipmentDao"/>
+	</bean>
+	
+	<bean id="equipmenttypeService" class="com.equipmenttype.service.EquipmentTypeService">
+		<property name="equipmenttypeDao" ref="equipmenttypeDao"/>
+	</bean>
+	
+	<bean id="dataService" class="com.data.service.DataService">
+		<property name="dataDao" ref="dataDao"/>
+	</bean>
+	
+	
+	<!--  Dao注入sessionFactory=============-->
+	<bean id="userDao" class="com.user.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<bean id="equipmentDao" class="com.equipment.dao.EquipmentDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	
+	<bean id="equipmenttypeDao" class="com.equipmenttype.dao.EquipmentTypeDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	
+	<bean id="dataDao" class="com.data.dao.DataDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>	
+	
+</beans>

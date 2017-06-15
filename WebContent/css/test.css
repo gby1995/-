@@ -1,0 +1,80 @@
+#nav{
+    float: left;
+}
+#nav #tets{
+    margin-left:90%;
+}
+#tets li{
+    width:10%;
+}
+.daohang{
+    position:fixed;
+    left:0;
+    top:0;
+    z-index:9999;
+    width:50%; 
+    padding-top: 1%;   
+
+}
+.daohang li{
+    float: left;
+    list-style: none;
+    width:15%;
+    height: 35px;
+    line-height: 35px;
+}
+.daohang a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+.daohang a:hover{
+    color:white;
+}
+.daohang .act{
+    /*color: #f00;*/
+    background-color:#3CB371;
+    color:white;
+}   
+#page1{
+    background-image:url('../images/index1.png');
+    background-size: 100% 100%;
+   /* background-size:cover;*/
+
+}              
+#page2{
+    background-image:url('../images/index2.png');
+    background-size: 100% 100%;
+    /*background-size:cover;*/
+}              
+#page3{
+    background-image:url('../16.jpg');
+    background-size: 100%;
+     background-size:cover;
+}              
+#page4{
+    background-image:url('');
+    background-size: 100%;
+    background-color: black;
+     background-size:cover;
+}              
+ 
+.tlt{
+    color:#3CB371;
+    /*height:20%;*/
+    /*width:60%;*/
+    margin-left: 5%;
+    /*padding-top: 1%;*/
+    margin-top: -10%;
+} 
+.tlt1{
+    color: #3CB371;
+    padding-top: 40%;
+} 
+#page4 h1{
+    color: #3CB371;
+}
+#page4 p{
+    color:white;
+    margin-top: 5%;
+}

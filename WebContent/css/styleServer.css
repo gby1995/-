@@ -1,0 +1,173 @@
+#nav{
+    float: left;
+    background: #7F7F7F;
+    width:100%;
+    height:8%;
+    position: fixed;
+    margin-top:-10px;
+    z-index: 1;
+}
+#nav li{
+    float: left;
+}
+#nav #tets{
+    margin-left:90%;
+    margin-top: -1%;
+}
+#tets li{
+    width:10%;
+    height: 35px;
+    line-height: 35px;
+}
+.daohang{
+    /*position:fixed;*/
+    left:0;
+    top:0;
+    margin: 0;
+    /*z-index:9999;*/
+    width:50%;
+    padding-top: 1%;
+
+}
+.daohang li{
+    float: left;
+    list-style: none;
+    width:15%;
+    height: 35px;
+    line-height: 35px;
+}
+.daohang a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    font-size: 12px;
+}
+.daohang .act{
+    /*color: #f00;*/
+    background-color:#3CB371;
+}
+#content{
+    width:100%;
+    margin:0 auto;
+    padding-top: 40px;
+}
+#data{
+    width:80%;
+    margin:0 auto;
+}
+#data h1{
+    padding-top:30px;
+    text-align: center;
+}
+.active{background: yellow;}
+#data_caozuo{
+    padding-top:400px;
+    width:80%;
+    margin:0 auto;
+    padding-bottom:50px;
+}
+#data_caozuo button{
+    margin:0 auto;
+    color:blue;
+}
+#control{
+    width:80%;
+    margin:0 auto;
+}
+#control h1{
+    font-size:30px;
+    text-align: center;
+    padding:20px;
+}
+#control div{
+    margin:0 auto;
+}
+#radius1,#radius2,#radius3{
+    width:300px;
+    height:300px;
+    border-radius:150px;
+    border:2px red dashed;
+}
+#radius1,#radius2,#radius3 p{
+    padding-top:140px;
+    padding-left:85px;
+}
+#control .con_true {
+    position: absolute;
+    left:275px;
+    z-index: 1;
+}
+.jia{
+    position: absolute;
+    top:-240px;
+}
+.jian{
+    position: absolute;
+    top:-100px;
+}
+.guan{
+    position:relative;
+    left:260px;
+    top:-170px;
+}
+#server_video,#con{
+    width:80%;
+    margin:0 auto;
+    padding-top:50px;
+}
+#video_jieshao{
+    width:100%;
+    padding-bottom: 50px;
+}
+#server_video h1{
+    font-size:30px;
+    padding-top:100px;
+    padding-bottom:50px;
+    width:100%;
+    text-align: center;
+}
+#video_jieshao img{
+    width:100%;
+    height:400px;
+    margin:0 auto;
+    padding-bottom: 30px;
+}
+#video_jieshao p{
+    font-size:20px;
+    text-align: center;
+    padding-top: 20px;
+}
+#server_div{
+    width:80%;
+    margin:0 auto;
+}
+#server_video video{
+    width:100%;
+    margin: 0 auto;
+}
+#footer{
+    background: #000;
+    width:100%;
+    margin-top:2000px;
+}
+#footer_link{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+#footer_link li{
+    list-style: none;
+    float:left;
+    padding-left:30px;
+    width:160px;
+}
+#footer_link  li a{
+    text-decoration: none;
+    font-size:18px;
+    color:white;
+}
+#footer p{
+    padding-left:80px;
+    font-size:15px;
+    color:white;
+}
+

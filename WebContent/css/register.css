@@ -1,0 +1,133 @@
+body{
+    background:url(../images/bg.png) repeat-x;
+    min-height: 600px;
+    position: relative;
+
+}
+
+*{font-family:"微软雅黑"; margin:0; padding:0; border:0; font-size:14px;color:white;}
+html,body{height:100%; width:100%;;}
+
+
+
+.name,.pwd{
+    width: 310px;
+    height: 44px;
+    line-height: 44px;
+    padding-left: 15px;
+    outline: none;
+    border-radius: 20px;
+    background-color: #0A3C78;
+    border: 1px solid #329BE0;
+}
+.name:hover,.pwd:hover,.name:focus,.pwd:focus{
+
+    background-color: #052b64;
+}
+
+#login{
+
+    background: #3fb9ff;
+    font-size: 18px;
+    width: 150px;
+    height: 44px;
+    outline: none;
+    color: white;
+    background: -webkit-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: -o-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: -moz-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: linear-gradient(#3fb9ff, #099be7, #229de3);
+    border-radius: 20px;
+    margin-right: 23px;
+}
+#login:hover{
+    background: -webkit-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: -o-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: -moz-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: linear-gradient(#229de3, #099be7,#3fb9ff);
+}
+#register{
+
+    background: #3fb9ff;
+    font-size: 18px;
+    width: 150px;
+    height: 44px;
+    outline: none;
+    color: white;
+    background: -webkit-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: -o-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: -moz-linear-gradient(#3fb9ff, #099be7, #229de3);
+    background: linear-gradient(#3fb9ff, #099be7, #229de3);
+    border-radius: 20px;
+}
+#register:hover{
+    background: -webkit-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: -o-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: -moz-linear-gradient(#229de3, #099be7,#3fb9ff);
+    background: linear-gradient(#229de3, #099be7,#3fb9ff);
+}
+
+
+#head{
+    height: 50px;
+    padding-top: 25px;
+    margin-left: 14px;
+}
+#middle{
+    margin-top: 60px;
+    /* height:600px; */
+
+}
+
+#middle li {
+    /*list-style-type:none;*/
+    margin-top: 15px;
+    /*position: fixed;*/
+}
+#middle li span{
+    /*margin-left: 50px;*/
+    position: fixed;
+    margin-left: 10px;
+}
+
+#cloud{
+    background: url(../images/cloud.png) repeat;
+    width: 100%;
+    height: 356px;
+    position: absolute;
+    bottom: 0px;
+    -webkit-animation: cloud 60s linear infinite alternate;
+    -moz-animation: clouds 60s linear infinite alternate;
+
+
+    z-index: -10;
+
+}
+
+@-webkit-keyframes cloud {
+    0%{background-position:top left}
+    100%{background-position:top right}
+}
+
+@-moz-keyframes clouds {
+    0%{background-position:top left}
+    100%{background-position:top right}
+}
+
+#err{
+    display:none;
+    color:red;
+}
+#sky{
+    background: url(../images/sky.png) repeat;
+    width: 100%;
+    heigth: 462px;
+    z-index: -20;
+    height: 462px;
+    position: absolute;
+    top: 0px;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #0A3C78 inset !important;//关于解决输入框背景颜色
+/*-webkit-text-fill-color: rgba(255,255,255,1)!important;//关于接输入框文字颜色*/
+}

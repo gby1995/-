@@ -1,0 +1,121 @@
+a{ color:inherit; }
+a:link { text-decoration: none;}
+#nav{
+    float: left;
+    background: #7F7F7F;
+    width:100%;
+    height:8%;
+    position: fixed;
+    margin-top:-10px;
+    z-index: 1;
+}
+#nav li{
+    float: left;
+}
+#nav #tets{
+    margin-left:90%;
+    margin-top: -1%;
+}
+#tets li{
+    width:10%;
+    height: 35px;
+    line-height: 35px;
+}
+.daohang{
+    /*position:fixed;*/
+    left:0;
+    top:0;
+    margin: 0;
+    /*z-index:9999;*/
+    width:50%;
+    padding-top: 1%;
+
+}
+.daohang li{
+    float: left;
+    list-style: none;
+    width:15%;
+    height: 35px;
+    line-height: 35px;
+}
+.daohang a{
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+    font-size: 12px;
+}
+.daohang .act{
+    /*color: #f00;*/
+    background-color:#3CB371;
+}
+#content{
+    width:100%;
+}
+#content .title{
+    width: 100%;
+    height:20px;
+    color: #ccc;
+}
+#content .left{
+    float:left;
+    width:100px;
+    position: fixed;
+    padding-top: 100px;
+    padding-left:150px;
+}
+#content .left li{
+    width:100px;
+    height:30px;
+    line-height: 30px;
+    font-size: 16px;
+    list-style: none;
+    border:1px solid #3CB371 ;
+    border-bottom-width: 2px;
+}
+#content .left li a{
+    text-decoration-line: none;
+}
+#content .right{
+    padding-right:120px;
+    width:65%;
+    padding-top: 50px;
+}
+#content .right div{
+    padding: 30px;
+    border:1px solid #ccc;
+}
+#content .right div h3{
+    font-size:30px;
+    padding:30px;
+}
+#content .right div p{
+    letter-spacing: 1px;
+    line-height: 20px;
+    text-indent:30px;
+    font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+}
+#footer{
+    background: #000;
+    width:100%;
+    margin-top:2700px;
+}
+#footer_link{
+    padding-top:30px;
+    padding-bottom:30px;
+}
+#footer_link li{
+    list-style: none;
+    float:left;
+    padding-left:50px;
+    width:120px;
+}
+#footer_link  li a{
+    text-decoration: none;
+    font-size:18px;
+    color:white;
+}
+#footer p{
+    padding-left:50px;
+    font-size:15px;
+    color:white;
+}
